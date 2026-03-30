@@ -1,79 +1,153 @@
+"use client";
+
 import { Reveal } from "@/components/motion/Reveal";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionHeading } from "@/sections/SectionHeading";
 import { SectionShell } from "@/sections/SectionShell";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
     <SectionShell id="about" paddingY="py-20 sm:py-28">
-      <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Profile"
-            title="Engineering student, builder mindset."
-            description="I blend structured software engineering with creative UI craft. Always curious, always shipping."
-          />
-          <p className="mt-7 max-w-xl text-base leading-7 text-white/70 sm:text-lg">
-            I’m passionate about web development and continuous learning. I enjoy turning complex requirements into
-            simple, polished interfaces that feel fast and intuitive.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <span className="rounded-full border border-white/[0.10] bg-white/[0.06] px-4 py-2 text-xs font-semibold text-white/80 backdrop-blur">
-              Detail-driven UI
-            </span>
-            <span className="rounded-full border border-white/[0.10] bg-white/[0.06] px-4 py-2 text-xs font-semibold text-white/80 backdrop-blur">
-              Scalable components
-            </span>
-            <span className="rounded-full border border-white/[0.10] bg-white/[0.06] px-4 py-2 text-xs font-semibold text-white/80 backdrop-blur">
-              Continuous learning
-            </span>
-          </div>
+      <Reveal>
+        <SectionHeading
+          eyebrow="About"
+          title="The builder behind the code."
+          description="Three dimensions of what makes me different."
+        />
+      </Reveal>
+
+      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        {/* Card 1: The Journey */}
+        <Reveal delayMs={100}>
+          <motion.div
+            whileHover={{
+              y: -8,
+              transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+            }}
+            className="group"
+          >
+            <GlassCard className="h-full p-6 border-t-4 border-t-blue-500/50 hover:border-t-blue-400 transition-colors duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-blue-500/25 to-cyan-400/25 border border-white/[0.10] flex items-center justify-center text-white text-xl">
+                  📚
+                </div>
+                <div>
+                  <h3 className="text-lg font-black text-white">THE JOURNEY</h3>
+                </div>
+              </div>
+              
+              <div className="space-y-3 text-sm leading-6 text-white/80">
+                <p>
+                  <strong className="text-white/90">Software Engineering</strong> student at Al-Azhar + CS at UOP.
+                </p>
+                <p>
+                  Obsessed with turning ideas into real, shipped work.
+                </p>
+                <p>
+                  <strong className="text-white/90">2 years</strong> of consistent building.
+                </p>
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-white/[0.05]">
+                <div className="text-xs text-white/60">
+                  Every project is a case study in growth.
+                </div>
+              </div>
+            </GlassCard>
+          </motion.div>
         </Reveal>
 
-        <div className="grid gap-4">
-          <Reveal>
-            <GlassCard className="p-6">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-violet-500/25 via-cyan-300/15 to-fuchsia-500/25 border border-white/[0.10] flex items-center justify-center text-white text-lg">
-                  A
+        {/* Card 2: The Code */}
+        <Reveal delayMs={200}>
+          <motion.div
+            whileHover={{
+              y: -8,
+              transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+            }}
+            className="group"
+          >
+            <GlassCard className="h-full p-6 border-t-4 border-t-purple-500/50 hover:border-t-purple-400 transition-colors duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-500/25 to-violet-400/25 border border-white/[0.10] flex items-center justify-center text-white text-xl">
+                  🎨
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-white/90">
-                    Software Engineering student at Al-Azhar University
-                  </div>
+                  <h3 className="text-lg font-black text-white">THE CODE</h3>
+                </div>
+              </div>
+              
+              <div className="space-y-3 text-sm leading-6 text-white/80">
+                <p>
+                  I don&apos;t just write code—I <strong className="text-white/90">craft experiences</strong>.
+                </p>
+                <p>
+                  Motion, typography, and details aren&apos;t extras—they&apos;re the product.
+                </p>
+                <p>
+                  I approach every pixel like an <strong className="text-white/90">engineer</strong>: intentional, measurable, scalable.
+                </p>
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-white/[0.05]">
+                <div className="text-xs text-white/60">
+                  Code that recruiters notice.
                 </div>
               </div>
             </GlassCard>
-          </Reveal>
+          </motion.div>
+        </Reveal>
 
-          <Reveal delayMs={80}>
-            <GlassCard className="p-6">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-cyan-300/20 via-violet-500/15 to-fuchsia-500/20 border border-white/[0.10] flex items-center justify-center text-white text-lg">
-                  U
+        {/* Card 3: The Result */}
+        <Reveal delayMs={300}>
+          <motion.div
+            whileHover={{
+              y: -8,
+              transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+            }}
+            className="group"
+          >
+            <GlassCard className="h-full p-6 border-t-4 border-t-orange-500/50 hover:border-t-orange-400 transition-colors duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-orange-500/25 to-amber-400/25 border border-white/[0.10] flex items-center justify-center text-white text-xl">
+                  🎯
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-white/90">
-                    Computer Science student at University of the People
+                  <h3 className="text-lg font-black text-white">THE RESULT</h3>
+                </div>
+              </div>
+              
+              <div className="space-y-3 text-sm leading-6 text-white/80">
+                <p>
+                  When I deliver:
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-400" />
+                    <span><strong className="text-white/90">98+ Page Speed</strong> scores</span>
                   </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-400" />
+                    <span><strong className="text-white/90">Zero bugs</strong> in production</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-400" />
+                    <span><strong className="text-white/90">Users notice</strong> the difference</span>
+                  </div>
+                </div>
+                <p>
+                  Projects I build become case studies.
+                </p>
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-white/[0.05]">
+                <div className="text-xs text-white/60">
+                  Results that get you hired.
                 </div>
               </div>
             </GlassCard>
-          </Reveal>
-
-          <Reveal delayMs={140}>
-            <GlassCard className="p-6">
-              <div className="text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
-                Why I build
-              </div>
-              <div className="mt-3 text-xl font-black tracking-tight">Modern interfaces that feel alive.</div>
-              <p className="mt-2 text-sm leading-6 text-white/70">
-                Motion, typography, and performance details are not extras; they are the product. I craft experiences
-                recruiters remember.
-              </p>
-            </GlassCard>
-          </Reveal>
-        </div>
+          </motion.div>
+        </Reveal>
       </div>
     </SectionShell>
   );

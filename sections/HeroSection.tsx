@@ -1,8 +1,9 @@
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { Reveal } from "@/components/motion/Reveal";
 import { TypingHeadline } from "@/components/motion/TypingHeadline";
+import { StatsCounter } from "@/components/motion/StatsCounter";
 import { SectionShell } from "@/sections/SectionShell";
 
 export default function HeroSection() {
@@ -33,22 +34,56 @@ export default function HeroSection() {
 
           <Reveal delayMs={140}>
             <p className="mt-5 max-w-xl text-base leading-7 text-white/70 sm:text-lg">
-              I build modern, scalable, and visually stunning web applications.
+              I build experiences that feel alive.
+            </p>
+            <p className="mt-2 text-sm leading-6 text-white/60">
+              Full-Stack Developer specialized in motion-first, production-ready interfaces.
             </p>
           </Reveal>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Reveal delayMs={180}>
               <Button href="#projects" variant="primary">
-                View Projects
+                See My Best Work
               </Button>
             </Reveal>
             <Reveal delayMs={220}>
               <Button href="#contact" variant="secondary">
-                Contact Me
+                Let&apos;s Talk
               </Button>
             </Reveal>
           </div>
+
+          <Reveal delayMs={260}>
+            <div className="mt-10 rounded-2xl border border-white/[0.10] bg-white/[0.05] p-6 backdrop-blur-xl">
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-2xl font-black text-white sm:text-3xl">
+                    <StatsCounter end={20} suffix="+" />
+                  </div>
+                  <div className="mt-1 text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
+                    Projects
+                  </div>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-white sm:text-3xl">
+                    <StatsCounter end={5000} suffix="+" />
+                  </div>
+                  <div className="mt-1 text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
+                    Users
+                  </div>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-white sm:text-3xl">
+                    <StatsCounter end={98} suffix="%" />
+                  </div>
+                  <div className="mt-1 text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
+                    Page Speed
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
 
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
             <Reveal delayMs={200}>

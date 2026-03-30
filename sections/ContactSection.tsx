@@ -1,82 +1,120 @@
+"use client";
+
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionHeading } from "@/sections/SectionHeading";
 import { SectionShell } from "@/sections/SectionShell";
+import { Mail, Calendar, ExternalLink, Code2, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
   return (
     <SectionShell id="contact" paddingY="py-20 sm:py-28">
-      <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-        <div>
-          <Reveal>
-            <SectionHeading
-              eyebrow="Contact"
-              title="Let's build something great together"
-              description="Open to collaborations and new opportunities. Reach out and I’ll respond quickly."
-            />
-          </Reveal>
+      <Reveal>
+        <SectionHeading
+          eyebrow="Get In Touch"
+          title="Let's build something great"
+          description="Ready to collaborate? I respond to every message in 24h."
+        />
+      </Reveal>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Reveal delayMs={70}>
-              <div className="rounded-full border border-white/[0.10] bg-white/[0.06] px-4 py-2 text-xs font-semibold text-white/80 backdrop-blur">
-                Fast replies
+      <div className="mt-12 max-w-2xl mx-auto">
+        <Reveal delayMs={100}>
+          <GlassCard className="p-8 text-center">
+            {/* Main CTA Section */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-black text-white mb-4">
+                LET&apos;S BUILD SOMETHING GREAT
+              </h3>
+              
+              <div className="space-y-3 text-sm leading-6 text-white/80 mb-8">
+                <p>I reply to every message in 24h.</p>
+                <p>Rates start at <strong className="text-white">$20/hour</strong>.</p>
+                <p>Available for freelance work.</p>
               </div>
-            </Reveal>
-            <Reveal delayMs={120}>
-              <div className="rounded-full border border-white/[0.10] bg-white/[0.06] px-4 py-2 text-xs font-semibold text-white/80 backdrop-blur">
-                Clean communication
-              </div>
-            </Reveal>
-            <Reveal delayMs={170}>
-              <div className="rounded-full border border-white/[0.10] bg-white/[0.06] px-4 py-2 text-xs font-semibold text-white/80 backdrop-blur">
-                UI + engineering
-              </div>
-            </Reveal>
-          </div>
-        </div>
 
-        <Reveal delayMs={120}>
-          <GlassCard className="p-6 sm:p-7">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <div className="text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
-                  Links
+              {/* Primary Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Button
+                  variant="primary"
+                  href="malakhammza10"
+                  className="flex items-center gap-2 justify-center"
+                >
+                  <Mail className="h-4 w-4" />
+                  📧 Email Me
+                </Button>
+                
+                <Button
+                  variant="secondary"
+                  href="https://calendly.com/your-calendly"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 justify-center"
+                >
+                  <Calendar className="h-4 w-4" />
+                  📅 Schedule a Call (15min)
+                </Button>
+              </div>
+
+              {/* Divider */}
+              <div className="relative my-8">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-white/[0.10]" />
                 </div>
-                <div className="mt-2 text-xl font-black tracking-tight">Find me online</div>
-                <div className="mt-2 text-sm leading-6 text-white/70">
-                  I’d love to connect—especially for roles where UI quality and scalability matter.
+                <div className="relative flex justify-center text-xs font-semibold text-white/55 uppercase tracking-[0.22em]">
+                  <span className="bg-black/80 px-4">QUICK LINKS</span>
                 </div>
               </div>
-              <div className="hidden sm:block">
-                <div className="relative h-14 w-14 rounded-2xl border border-white/[0.10] bg-white/[0.06] backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_25px_70px_-45px_rgba(56,189,248,0.25)] overflow-hidden">
-                  <div className="absolute -inset-10 bg-[conic-gradient(from_180deg,rgba(34,211,238,0.30),rgba(168,85,247,0.26),rgba(244,114,182,0.20),rgba(34,211,238,0.30))] opacity-80 animate-[spinSlow_6s_linear_infinite]" />
-                  <div className="relative h-full w-full flex items-center justify-center text-white font-black">ME</div>
-                </div>
+
+              {/* Social Links */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <motion.a
+                  href="https://linkedin.com/in/malak-hamza-009529362"
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex flex-col items-center gap-2 p-4 rounded-2xl border border-white/[0.10] bg-white/[0.05] hover:bg-white/[0.08] transition-colors"
+                >
+                  <ExternalLink className="h-6 w-6 text-cyan-300" />
+                  <span className="text-xs font-medium text-white/80">LinkedIn</span>
+                </motion.a>
+
+                <motion.a
+                  href="https://github.com/solsol-m"
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex flex-col items-center gap-2 p-4 rounded-2xl border border-white/[0.10] bg-white/[0.05] hover:bg-white/[0.08] transition-colors"
+                >
+                  <Code2 className="h-6 w-6 text-cyan-300" />
+                  <span className="text-xs font-medium text-white/80">GitHub</span>
+                </motion.a>
+
+                <motion.a
+                  href="https://wa.me/1234567890"
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex flex-col items-center gap-2 p-4 rounded-2xl border border-white/[0.10] bg-white/[0.05] hover:bg-white/[0.08] transition-colors"
+                >
+                  <MessageCircle className="h-6 w-6 text-cyan-300" />
+                  <span className="text-xs font-medium text-white/80">WhatsApp</span>
+                </motion.a>
+
+                <motion.a
+                  href="mailto:malak@example.com"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex flex-col items-center gap-2 p-4 rounded-2xl border border-white/[0.10] bg-white/[0.05] hover:bg-white/[0.08] transition-colors"
+                >
+                  <Mail className="h-6 w-6 text-cyan-300" />
+                  <span className="text-xs font-medium text-white/80">Email</span>
+                </motion.a>
               </div>
-            </div>
-
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              <Button
-                variant="primary"
-                href="https://github.com/solsol-m"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </Button>
-              <Button
-                variant="secondary"
-                href="https://www.linkedin.com/in/malak-hamza-009529362"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </Button>
-            </div>
-
-            <div className="mt-6 text-xs font-semibold text-white/50">
-              Tip: Use these links to review projects and collaboration style.
             </div>
           </GlassCard>
         </Reveal>
