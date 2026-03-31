@@ -16,39 +16,40 @@ export default function HeroSection() {
       <div className="relative grid items-center gap-12 lg:grid-cols-2">
         <div className="relative">
           <Reveal>
-            <Badge className="bg-white/[0.06]">
-              Elite UI • Production-ready • Motion-first
-            </Badge>
+            <Badge className="bg-white/[0.06]">Portfolio</Badge>
           </Reveal>
           <Reveal delayMs={80}>
-            <h1 className="mt-5 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-              <span className="block bg-gradient-to-r from-cyan-200 via-violet-200 to-fuchsia-200 bg-clip-text text-transparent">
-                Malak Elmalahi
-              </span>
-              <span className="block mt-2 text-white/90">
+            <div className="mt-5">
+              <div className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
+                <span className="block text-white/90">Hi, I&apos;m</span>
+                <span className="block bg-gradient-to-r from-cyan-200 via-violet-200 to-fuchsia-200 bg-clip-text text-transparent">
+                  Malak Elmalahi
+                </span>
+              </div>
+              <div className="mt-3 text-white/90">
                 <TypingHeadline headline="Full Stack Developer" className="text-2xl sm:text-3xl" />
-              </span>
-            </h1>
+              </div>
+            </div>
           </Reveal>
 
           <Reveal delayMs={140}>
             <p className="mt-5 max-w-xl text-base leading-7 text-white/70 sm:text-lg">
-              I build experiences that feel alive.
+              I build real web applications using modern technologies like React, Next.js, and MongoDB.
             </p>
-            <p className="mt-2 text-sm leading-6 text-white/60">
-              Full-Stack Developer specialized in motion-first, production-ready interfaces.
+            <p className="mt-3 text-sm font-semibold text-white/55">
+              Scroll down to see my work
             </p>
           </Reveal>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Reveal delayMs={180}>
               <Button href="#projects" variant="primary">
-                See My Best Work
+                View Projects
               </Button>
             </Reveal>
             <Reveal delayMs={220}>
               <Button href="#contact" variant="secondary">
-                Let&apos;s Talk
+                Contact Me
               </Button>
             </Reveal>
           </div>

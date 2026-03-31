@@ -13,11 +13,12 @@ export function ProjectCard({ project }: { project: Project }) {
     <motion.div
       whileHover={{
         y: -6,
+        scale: 1.015,
       }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       className="group"
     >
-      <GlassCard className="h-full overflow-hidden">
+      <GlassCard className="h-full overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_0_0_1px_rgba(255,255,255,0.07),0_26px_90px_-45px_rgba(34,211,238,0.35)]">
         <motion.div
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{
@@ -43,26 +44,9 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
 
           <div className="flex flex-1 flex-col gap-4 p-6">
-            {/* Project Header */}
             <div>
-              <h3 className="text-xl font-black tracking-tight">{project.title}</h3>
-              <p className="mt-1 text-sm font-medium text-cyan-300">{project.tagline}</p>
-            </div>
-
-            {/* Problem Section */}
-            <div>
-              <h4 className="text-xs font-semibold tracking-[0.18em] text-white/55 uppercase mb-2">
-                THE PROBLEM
-              </h4>
-              <p className="text-sm leading-6 text-white/70">{project.problem}</p>
-            </div>
-
-            {/* Solution Section */}
-            <div>
-              <h4 className="text-xs font-semibold tracking-[0.18em] text-white/55 uppercase mb-2">
-                THE SOLUTION
-              </h4>
-              <p className="text-sm leading-6 text-white/70">{project.solution}</p>
+              <h3 className="text-xl font-black tracking-tight text-white">{project.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-white/70">{project.description}</p>
             </div>
 
             {/* Tech Tags */}
@@ -89,7 +73,7 @@ export function ProjectCard({ project }: { project: Project }) {
                     className="w-full sm:w-auto"
                   >
                     <Code2 className="h-4 w-4" />
-                    {project.hrefLabel ?? "View Code"}
+                    GitHub
                     <ArrowUpRight className="h-4 w-4 opacity-80" />
                   </Button>
                 ) : null}

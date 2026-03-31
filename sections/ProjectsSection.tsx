@@ -9,9 +9,9 @@ export default function ProjectsSection() {
     <SectionShell id="projects" paddingY="py-20 sm:py-28">
       <Reveal>
         <SectionHeading
-          eyebrow="Selected"
-          title="Projects recruiters notice."
-          description="Premium experiences built with clean architecture and motion that feels intentional."
+          eyebrow="Projects"
+          title="My work"
+          description="A few projects I built. Each card includes the tech stack and links to the code and live demo."
         />
       </Reveal>
 
