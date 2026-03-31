@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Reveal } from "@/components/motion/Reveal";
 import { TypingHeadline } from "@/components/motion/TypingHeadline";
-import { StatsCounter } from "@/components/motion/StatsCounter";
 import { SectionShell } from "@/sections/SectionShell";
 
 export default function HeroSection() {
@@ -51,66 +50,6 @@ export default function HeroSection() {
               <Button href="#contact" variant="secondary">
                 Let&apos;s Talk
               </Button>
-            </Reveal>
-          </div>
-
-          <Reveal delayMs={260}>
-            <div className="mt-10 rounded-2xl border border-white/[0.10] bg-white/[0.05] p-6 backdrop-blur-xl">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-black text-white sm:text-3xl">
-                    <StatsCounter end={20} suffix="+" />
-                  </div>
-                  <div className="mt-1 text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
-                    Projects
-                  </div>
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-white sm:text-3xl">
-                    <StatsCounter end={5000} suffix="+" />
-                  </div>
-                  <div className="mt-1 text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
-                    Users
-                  </div>
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-white sm:text-3xl">
-                    <StatsCounter end={98} suffix="%" />
-                  </div>
-                  <div className="mt-1 text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
-                    Page Speed
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="mt-10 grid gap-3 sm:grid-cols-2">
-            <Reveal delayMs={200}>
-              <div className="rounded-2xl border border-white/[0.10] bg-white/[0.05] p-4 backdrop-blur-xl">
-                <div className="text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
-                  Focus
-                </div>
-                <div className="mt-2 text-sm font-semibold text-white">
-                  Next.js App Router + UI systems
-                </div>
-                <div className="mt-1 text-sm text-white/65">
-                  Glassmorphism, motion, scalable components.
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delayMs={260}>
-              <div className="rounded-2xl border border-white/[0.10] bg-white/[0.05] p-4 backdrop-blur-xl">
-                <div className="text-xs font-semibold tracking-[0.18em] text-white/55 uppercase">
-                  Deliver
-                </div>
-                <div className="mt-2 text-sm font-semibold text-white">
-                  Premium UX in production
-                </div>
-                <div className="mt-1 text-sm text-white/65">
-                  Performance-minded, accessible, responsive.
-                </div>
-              </div>
             </Reveal>
           </div>
 

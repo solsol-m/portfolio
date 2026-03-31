@@ -65,23 +65,6 @@ export function ProjectCard({ project }: { project: Project }) {
               <p className="text-sm leading-6 text-white/70">{project.solution}</p>
             </div>
 
-            {/* Impact Section */}
-            <div>
-              <h4 className="text-xs font-semibold tracking-[0.18em] text-white/55 uppercase mb-2">
-                THE IMPACT
-              </h4>
-              <div className="grid gap-2">
-                {project.impact.map((item, index) => (
-                  <div key={index} className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-green-400" />
-                    <span className="text-sm text-white/80">
-                      <span className="font-semibold text-green-400">{item.value}</span> {item.metric}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Tech Tags */}
             <div className="flex flex-wrap gap-2">
               {project.tags.map((t) => (

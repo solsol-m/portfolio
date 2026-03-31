@@ -38,7 +38,7 @@ export default function ContactSection() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button
                   variant="primary"
-                  href="malakhammza10"
+                  href="malakhammza10@gmail.com"
                   className="flex items-center gap-2 justify-center"
                 >
                   <Mail className="h-4 w-4" />
@@ -94,7 +94,7 @@ export default function ContactSection() {
                 </motion.a>
 
                 <motion.a
-                  href="https://wa.me/1234567890"
+                  href="https://wa.me/+972597937823"
                   target="_blank"
                   rel="noreferrer"
                   whileHover={{ scale: 1.05 }}
@@ -106,7 +106,7 @@ export default function ContactSection() {
                 </motion.a>
 
                 <motion.a
-                  href="mailto:malak@example.com"
+                  href="mailto:malakhammza10@gmail.com"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex flex-col items-center gap-2 p-4 rounded-2xl border border-white/[0.10] bg-white/[0.05] hover:bg-white/[0.08] transition-colors"
