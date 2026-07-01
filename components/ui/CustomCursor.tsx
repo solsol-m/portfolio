@@ -1,59 +1,49 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      if (!isVisible) setIsVisible(true);
+    // Use CSS custom properties + rAF instead of Framer Motion springs
+    let rafId: number;
+    let currentX = 0;
+    let currentY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    const onMouseMove = (e: MouseEvent) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
     };
 
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.closest('button, a, input, textarea, [role="button"]')) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
+    const animate = () => {
+      // Simple lerp — very cheap
+      currentX += (targetX - currentX) * 0.1;
+      currentY += (targetY - currentY) * 0.1;
+
+      if (glowRef.current) {
+        glowRef.current.style.transform = `translate(${currentX - 64}px, ${currentY - 64}px)`;
       }
+
+      rafId = requestAnimationFrame(animate);
     };
 
-    const handleMouseLeave = () => {
-      setIsVisible(false);
-    };
-
-    window.addEventListener("mousemove", updateMousePosition);
-    window.addEventListener("mouseover", handleMouseOver);
-    document.documentElement.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+    rafId = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
-      window.removeEventListener("mouseover", handleMouseOver);
-      document.documentElement.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("mousemove", onMouseMove);
+      cancelAnimationFrame(rafId);
     };
-  }, [isVisible]);
-
-  if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
-    return null; // Don't show custom cursor on touch devices
-  }
+  }, []);
 
   return (
-    <>
-      <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9998] hidden h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/20 mix-blend-screen blur-xl md:block"
-        animate={{
-          x: mousePosition.x,
-          y: mousePosition.y,
-          opacity: isVisible ? (isHovering ? 1 : 0.6) : 0,
-          scale: isHovering ? 1.5 : 1,
-        }}
-        transition={{ type: "spring", stiffness: 250, damping: 20, mass: 0.8 }}
-      />
-    </>
+    <div
+      ref={glowRef}
+      aria-hidden
+      className="pointer-events-none fixed top-0 left-0 z-[9998] hidden h-32 w-32 rounded-full bg-cyan-500/15 mix-blend-screen blur-2xl md:block will-change-transform"
+    />
   );
 }

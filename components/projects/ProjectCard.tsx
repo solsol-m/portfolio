@@ -10,33 +10,35 @@ import type { Project } from "@/lib/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
   const cardRef = React.useRef<HTMLDivElement>(null);
+  const rafPending = React.useRef(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
+    if (rafPending.current || !cardRef.current) return;
+    rafPending.current = true;
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    cardRef.current.style.setProperty("--x", `${x}px`);
-    cardRef.current.style.setProperty("--y", `${y}px`);
+    requestAnimationFrame(() => {
+      if (cardRef.current) {
+        cardRef.current.style.setProperty("--x", `${x}px`);
+        cardRef.current.style.setProperty("--y", `${y}px`);
+      }
+      rafPending.current = false;
+    });
   };
 
   return (
-    <motion.div
+    <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      whileHover={{
-        y: -6,
-        scale: 1.015,
-      }}
-      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-      className="group"
+      className="group transition-transform duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.015] will-change-transform"
     >
       <GlassCard className="h-full overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_0_0_1px_rgba(255,255,255,0.07),0_26px_90px_-45px_rgba(34,211,238,0.35)]">
-        <motion.div
+        <div
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10"
           style={{
             background:
-              "radial-gradient(600px circle at var(--x,50%) var(--y,0%), rgba(34,211,238,0.18), transparent 45%)",
+              "radial-gradient(500px circle at var(--x,50%) var(--y,0%), rgba(34,211,238,0.15), transparent 45%)",
           }}
         />
 
@@ -109,7 +111,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         </div>
       </GlassCard>
-    </motion.div>
+    </div>
   );
 }
 
