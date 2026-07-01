@@ -4,13 +4,17 @@ import { SectionShell } from "@/sections/SectionShell";
 
 export default function SkillsSection() {
   const items = [
+    "JavaScript",
+    "TypeScript",
     "React",
     "Next.js",
-    "TypeScript",
-    "Node.js",
-    "MongoDB",
+    "Vite",
     "Tailwind CSS",
+    "Framer Motion",
     "Git",
+    "Github",
+    "Css",
+
   ];
 
   return (

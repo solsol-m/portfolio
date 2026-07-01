@@ -11,14 +11,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Prosperity Project",
+    description:
+      "A sleek, professional web application designed with modern principles, fluid animations, and premium aesthetics.",
+    image: "/projects/Prosperity.png",
+    tags: ["Next.js", "Tailwind CSS", "TypeScript", "React"],
+    AppUrl: "https://prosperity-opal.vercel.app/",
+    githubUrl: "https://github.com/solsol-m/Prosperity-project",
+    featured: true
+  },
+  {
     title: "Amana Transportation",
     description:
       "A web dashboard for managing bus routes and viewing route status. Includes an interactive map and a clean admin-style UI.",
     image: "/projects/amana-trans.png",
     tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
     AppUrl: "https://amana-transportation-six.vercel.app/",
-    githubUrl: "https://github.com/solsol-m/amana-transportation",
-    featured: true
+    githubUrl: "https://github.com/solsol-m/amana-transportation"
+  },
+  {
+    title: "ElectroMall E-commerce",
+    description:
+      "An E-commerce platform for selling electronic devices. Features an admin dashboard for order and product management.",
+    image: "/projects/ElectroMall.png",
+    tags: ["PHP", "MySQL", "JavaScript", "CSS"],
+    AppUrl: "",
+    githubUrl: "https://github.com/solsol-m/ElectroMall"
+  },
+  {
+    title: "Academic Advising System",
+    description:
+      "A comprehensive system to manage and streamline academic advising operations, bridging communication between students and advisors.",
+    image: "/projects/advising.jpg",
+    tags: ["PHP", "MySQL", "HTML", "CSS"],
+    AppUrl: "",
+    githubUrl: "https://github.com/solsol-m/academic_advising"
+  },
+  {
+    title: "Modern Login Template",
+    description:
+      "A beautiful, responsive and modern login UI template with smooth transitions, glassmorphism effects, and a clean aesthetic.",
+    image: "/projects/login.png",
+    tags: ["HTML", "CSS", "JavaScript", "UI/UX"],
+    AppUrl: "",
+    githubUrl: "https://github.com/solsol-m/Modern-Login-Template"
   },
   {
     title: "Log Guard",
@@ -50,11 +86,10 @@ export const projects: Project[] = [
   {
     title: "Portfolio Website",
     description:
-      "A personal portfolio website built with Next.js and Tailwind CSS to showcase projects and contact links.",
+      "A personal portfolio website built with Next.js and Tailwind CSS to showcase projects, skills, and contact links.",
     image: "/projects/portfolio.png",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    tags: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
     AppUrl: "https://portfolio-website-three.vercel.app/",
     githubUrl: "https://github.com/solsol-m/portfolio-website"
   }
 ];
-

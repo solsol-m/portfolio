@@ -27,10 +27,9 @@ export default function ContactSection() {
               <h3 className="text-2xl font-black text-white mb-4">
                 LET&apos;S BUILD SOMETHING GREAT
               </h3>
-              
+
               <div className="space-y-3 text-sm leading-6 text-white/80 mb-8">
                 <p>I reply to every message in 24h.</p>
-                <p>Rates start at <strong className="text-white">$20/hour</strong>.</p>
                 <p>Available for freelance work.</p>
               </div>
 
@@ -44,7 +43,7 @@ export default function ContactSection() {
                   <Mail className="h-4 w-4" />
                   📧 Email Me
                 </Button>
-                
+
                 <Button
                   variant="secondary"
                   href="https://calendly.com/your-calendly"

@@ -18,10 +18,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Malak Elmalahi | Full Stack Developer",
+  title: "Malak Elmalahi | Front-End Developer",
   description:
     "Elite portfolio by Malak Elmalahi. Modern, scalable, visually stunning web applications with motion-first UI.",
 };
+
+import { CustomCursor } from "@/components/ui/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -31,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceSans.variable} ${mono.variable} ${inter.variable} h-full`}>
       <body className="min-h-full bg-[#04040a] text-white font-sans antialiased flex flex-col">
+        <CustomCursor />
         {children}
       </body>
     </html>

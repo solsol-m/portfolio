@@ -22,9 +22,9 @@ export function Reveal({
   return (
     <div ref={ref} className={className}>
       <motion.div
-        initial={{ opacity: 0, y }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
-        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: delayMs / 1000 }}
+        initial={{ opacity: 0, y, filter: "blur(8px)", scale: 0.96 }}
+        animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : { opacity: 0, y, filter: "blur(8px)", scale: 0.96 }}
+        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: delayMs / 1000 }}
       >
         {children}
       </motion.div>

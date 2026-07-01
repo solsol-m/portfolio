@@ -27,7 +27,7 @@ export default function HeroSection() {
                 </span>
               </div>
               <div className="mt-3 text-white/90">
-                <TypingHeadline headline="Full Stack Developer" className="text-2xl sm:text-3xl" />
+                <TypingHeadline headline="Front-End Developer" className="text-2xl sm:text-3xl" />
               </div>
             </div>
           </Reveal>
