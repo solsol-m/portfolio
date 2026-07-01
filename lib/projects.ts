@@ -13,9 +13,9 @@ export const projects: Project[] = [
   {
     title: "Prosperity Project",
     description:
-      "A sleek, professional web application designed with modern principles, fluid animations, and premium aesthetics.",
+      "A smart personal finance platform for tracking expenses, setting savings goals, and building wealth — built in Arabic with a modern RTL-first UI.",
     image: "/projects/Prosperity.png",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript", "React"],
+    tags: ["React", "Vite", "TypeScript", "Tailwind CSS"],
     AppUrl: "https://prosperity-opal.vercel.app/",
     githubUrl: "https://github.com/solsol-m/Prosperity-project",
     featured: true
